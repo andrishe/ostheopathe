@@ -1,0 +1,27 @@
+import About from './components/about';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Process from './components/Process';
+import Testimonials from './components/Testimonials';
+import Contact from './components/contact';
+import Footer from './components/footer';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Process />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </main>
+    </div>
+  );
+}
+
+export default App;
