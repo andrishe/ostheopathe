@@ -79,15 +79,15 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative -mb-5">
+            <div className="relative ">
               <img
                 src={michImage}
                 alt="Ostéopathe en consultation"
-                className="w-full max-w-lg mx-auto rounded-2xl
+                className="w-full max-w-lg mx-auto rounded-2xl absolute -top-96
                  "
               />
               <motion.div
-                className="absolute bottom-10 -left-24 bg-white rounded-2xl px-6 py-4 shadow-xl"
+                className="absolute top-64 -right-24 bg-white rounded-2xl px-6 py-4 shadow-xl"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.3 }}
