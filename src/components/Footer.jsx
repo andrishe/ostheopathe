@@ -11,7 +11,7 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            &copy; 2023 Sima Creation web Tous droits réservés.
+            &copy; 2025 Sima Creation web Tous droits réservés.
           </motion.p>
           <div className="flex space-x-4">
             <motion.a

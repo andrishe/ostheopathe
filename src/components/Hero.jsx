@@ -10,7 +10,7 @@ const reviews = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 relative overflow-hidden ">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 relative overflow-hidden">
       {/* Background Elements */}
       <motion.div
         className="absolute inset-0 w-full h-full flex justify-center items-center"
@@ -29,7 +29,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 mt-32 ">
+            <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 mt-32">
               Bonjour, je suis
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">
@@ -74,24 +74,29 @@ const Hero = () => {
 
           {/* Right Image Content */}
           <motion.div
-            className="lg:w-1/2 flex justify-center items-end relative"
+            className="lg:w-1/2 flex justify-center items-center relative"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <img
-              src={michImage}
-              alt="Ostéopathe en consultation"
-              className="w-full max-w-lg mx-auto rounded-2xl relative lg:bottom-0 bottom-[-50px]"
-            />
+            {/* Image Container */}
+            <div className="relative w-full aspect-square bg-white/20 rounded-full shadow-lg overflow-hidden">
+              <img
+                src={michImage || '/placeholder.svg'}
+                alt="Ostéopathe en consultation"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Experience Badge */}
             <motion.div
-              className="absolute bottom-10 right-0 bg-white rounded-2xl px-6 py-4 shadow-xl"
+              className="absolute bottom-10 -right-10 bg-white rounded-2xl px-6 py-4 shadow-xl"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.3 }}
             >
               <span className="text-pink-600 font-bold text-2xl">15+ ans</span>
-              <span className="text-gray-600 block"> d&apos;expérience</span>
+              <span className="text-gray-600 block">d&apos;expérience</span>
             </motion.div>
           </motion.div>
         </div>
