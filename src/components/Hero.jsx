@@ -74,30 +74,25 @@ const Hero = () => {
 
           {/* Right Image Content */}
           <motion.div
-            className="lg:w-1/2"
+            className="lg:w-1/2 flex justify-center items-end relative"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative ">
-              <img
-                src={michImage}
-                alt="Ostéopathe en consultation"
-                className="w-full max-w-lg mx-auto rounded-2xl absolute -top-96
-                 "
-              />
-              <motion.div
-                className="absolute top-64 -right-24 bg-white rounded-2xl px-6 py-4 shadow-xl"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.3 }}
-              >
-                <span className="text-pink-600 font-bold text-2xl">
-                  15+ ans
-                </span>
-                <span className="text-gray-600 block"> d&apos;expérience</span>
-              </motion.div>
-            </div>
+            <img
+              src={michImage}
+              alt="Ostéopathe en consultation"
+              className="w-full max-w-lg mx-auto rounded-2xl relative lg:bottom-0 bottom-[-50px]"
+            />
+            <motion.div
+              className="absolute bottom-10 right-0 bg-white rounded-2xl px-6 py-4 shadow-xl"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.3 }}
+            >
+              <span className="text-pink-600 font-bold text-2xl">15+ ans</span>
+              <span className="text-gray-600 block"> d&apos;expérience</span>
+            </motion.div>
           </motion.div>
         </div>
       </div>
