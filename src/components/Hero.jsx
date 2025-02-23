@@ -10,18 +10,18 @@ const reviews = [
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 relative overflow-hidden py-12">
       {/* Background Elements */}
       <motion.div
         className="absolute inset-0 w-full h-full flex justify-center items-center"
         animate={{ opacity: [0.5, 0.8, 0.5], scale: [1, 1.2, 1] }}
-        transition={{ duration: 10, repeat: Infinity }}
+        transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY }}
       >
         <div className="w-96 h-96 bg-white rounded-full mix-blend-overlay opacity-10" />
       </motion.div>
 
-      <div className="container mx-auto px-6 lg:px-20 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-20 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Left Text Content */}
           <motion.div
             className="lg:w-1/2 text-white text-center lg:text-left"
@@ -29,7 +29,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 mt-32">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-6">
               Bonjour, je suis
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-500">
@@ -44,7 +44,7 @@ const Hero = () => {
             </p>
 
             {/* CTA Section */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-12">
               <motion.button
                 className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -58,9 +58,9 @@ const Hero = () => {
                   {reviews.map((image, index) => (
                     <img
                       key={index}
-                      src={image}
-                      alt={`Patient ${index + 1}`}
-                      className="w-10 h-10 rounded-full border-2 border-white shadow-md"
+                      src={image || '/placeholder.svg'}
+                      alt=""
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-white shadow-md"
                     />
                   ))}
                 </div>
@@ -80,7 +80,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Image Container */}
-            <div className="relative w-full aspect-square bg-white/20 rounded-full shadow-lg overflow-hidden">
+            <div className="relative w-64 sm:w-80 lg:w-full aspect-square bg-white/20 rounded-full shadow-lg overflow-hidden">
               <img
                 src={michImage || '/placeholder.svg'}
                 alt="Ostéopathe en consultation"
@@ -90,13 +90,17 @@ const Hero = () => {
 
             {/* Experience Badge */}
             <motion.div
-              className="absolute bottom-10 -right-10 bg-white rounded-2xl px-6 py-4 shadow-xl"
+              className="absolute bottom-0 right-0 sm:bottom-10 sm:-right-10 bg-white rounded-2xl px-4 sm:px-6 py-2 sm:py-4 shadow-xl"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 0.3 }}
             >
-              <span className="text-pink-600 font-bold text-2xl">15+ ans</span>
-              <span className="text-gray-600 block">d&apos;expérience</span>
+              <span className="text-pink-600 font-bold text-xl sm:text-2xl">
+                15+ ans
+              </span>
+              <span className="text-gray-600 block text-sm sm:text-base">
+                d&apos;expérience
+              </span>
             </motion.div>
           </motion.div>
         </div>
